@@ -2,7 +2,6 @@ const introOverlay = document.getElementById('intro-overlay');
 const introVideo = document.getElementById('intro-video');
 const mainContent = document.getElementById('main-content');
 
-// Video ends -> start website immediately with zero gap
 introVideo.onended = function() {
     startWebsite();
 };
@@ -15,7 +14,7 @@ function startWebsite() {
     }, 500);
 }
 
-// Countdown Target Date
+// Countdown
 const weddingDate = new Date('October 18, 2026 19:00:00').getTime();
 
 function updateCountdown() {
@@ -36,7 +35,7 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Scratch Card Setup
+// Scratch Card
 const canvas = document.getElementById('scratchCanvas');
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#c5a059';
@@ -70,7 +69,7 @@ canvas.addEventListener('touchstart', () => isDrawing = true);
 canvas.addEventListener('touchmove', scratch);
 window.addEventListener('touchend', () => isDrawing = false);
 
-// --- Customizer Control Panel Functions (PIN: 1612) ---
+// Customizer Modal (PIN: 1612)
 function openCustomizer() {
     document.getElementById('customizer-modal').style.display = 'flex';
 }
@@ -86,7 +85,7 @@ function verifyPin() {
         closeModal();
         document.getElementById('edit-panel').style.display = 'flex';
     } else {
-        alert('Galat PIN hai bhai! Sahi PIN dalo.');
+        alert('Galat PIN hai bhai! Sahi PIN dalo (1612).');
     }
 }
 
@@ -108,4 +107,3 @@ function saveChanges() {
     closeEditPanel();
     alert('Details successfully update ho gayi!');
 }
-
